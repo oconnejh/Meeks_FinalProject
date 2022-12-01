@@ -10,6 +10,7 @@ Anything else that's relevant:
 '''
 
 from PIL import Image
+import json
 
 '''
 #read the image
@@ -27,4 +28,21 @@ with open('english.txt') as textFileKey: # Make Python open and look at text fil
     for index, line in enumerate(textFileKey): # Iterate and assign number to each word
         formattedString = line.replace('\n','') # Fix word spacing before storing in Dictionary
         deciphererDict.update({index:formattedString}) # Add place # and word to dictionary as key value pair
-       
+print(deciphererDict)
+
+# Get out dictionary data from EncryptedGroupHints.json 
+with open('EncryptedGroupHints.json') as json_file:
+    encryptData = json.load(json_file)
+#print(encryptData)
+# Get our portion of the dictionary out
+meeksData = encryptData['Meeks']
+print(meeksData)
+
+# Decipher the location by iterating over the dictionary and putting each word in a list
+encryptedMessage= meeksData
+answerList = []
+
+for i in encryptedMessage:
+    word_code = int(i)
+    answerList.append(deciphererDict[word_code])
+print(answerList)
