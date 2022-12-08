@@ -13,6 +13,7 @@ Anything else that's relevant:
 '''
 
 from Functions import *
+import os
 
 englishDict = dictionary('english.txt')
 #print(englishDict)
@@ -22,3 +23,4 @@ meeksData = encryptData('EncryptedGroupHints.json', 'Meeks')
 
 meeksMessage = decryptMessage(meeksData, englishDict)
 print(meeksMessage)
+display_image(os.path.dirname(os.path.abspath(__file__)) + "/MeekGroupPic.jpeg")

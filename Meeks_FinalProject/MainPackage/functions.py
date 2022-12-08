@@ -24,3 +24,11 @@ def decryptMessage(groupData, dictionary):
         word_code = int(i) 
         answerList.append(dictionary[word_code]) #append list to store each answer
     return answerList
+
+
+def display_image( filename ) :
+    try:
+        myimage = Image.open(filename)
+        myimage.show()
+    except:
+        return None
