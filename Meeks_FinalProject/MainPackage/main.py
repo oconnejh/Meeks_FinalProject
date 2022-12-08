@@ -12,7 +12,7 @@ https://stackoverflow.com/questions/41276755/convert-txt-file-into-a-list-of-int
 Anything else that's relevant: 
 '''
 
-from Functions import *
+from functions import *
 
 englishDict = dictionary('english.txt')
 #print(englishDict)
