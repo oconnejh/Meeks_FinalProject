@@ -12,6 +12,8 @@ https://stackoverflow.com/questions/41276755/convert-txt-file-into-a-list-of-int
 Anything else that's relevant: 
 '''
 
+
+import os
 from functions import *
 
 englishDict = dictionary('english.txt')
@@ -22,3 +24,4 @@ meeksData = encryptData('EncryptedGroupHints.json', 'Meeks')
 
 meeksMessage = decryptMessage(meeksData, englishDict)
 print(meeksMessage)
+display_image(os.path.dirname(os.path.abspath(__file__)) + "/MeekGroupPic.jpeg")
